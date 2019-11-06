@@ -1,0 +1,306 @@
+<?php
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Kevin Pemonon | Portfolio</title>
+</head>
+<body>
+    <header id="header">
+        <div class="hamburger">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </div>
+        <nav id="menu-hide" class="menu-hide">
+            <div>
+                <img class="logo-header" src="image/logo.png">
+            </div>
+            <ul>
+                <li><a href="#header" class="home-menu">HOME</a></li>
+                <li><a href="#skills" class="skills-menu">COMPETENCES</a></li>
+                <li><a href="#experiences" class="experiences-menu">EXPERIENCES</a></li>
+                <li><a href="#formation"  class="formation-menu">FORMATIONS</a></li>
+                <li><a href="#portfolio" class="portfolio-menu">PORTFOLIO</a></li>
+                <!-- <li><a href="#contact" class="contact-menu">CONTACT</a></li> -->
+            </ul>
+        </nav>
+        <nav id="menu-main">
+            <div>
+                <img class="logo-header" src="image/logo.png">
+            </div>
+            <ul>
+                <li><a href="#header" class="home-menu">HOME</a></li>
+                <li><a href="#skills" class="skills-menu">COMPETENCES</a></li>
+                <li><a href="#experiences" class="experiences-menu">EXPERIENCES</a></li>
+                <li><a href="#formation" class="formation-menu">FORMATIONS</a></li>
+                <li><a href="#portfolio" class="portfolio-menu">PORTFOLIO</a></li>
+                <!-- <li><a href="#contact" class="contact-menu">CONTACT</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <div class="title-home">
+                <img src="image/logo.png" class="logo-home">
+                <a class="button-cv" href="docs/cv_kevin_pemonon_alternance.pdf" target="_blank">TELECHARGER CV</a>
+            </div>
+            <div class="description-home">
+                <img src="image/profil.jpg" class="profil-picture">
+                <span class="text-description-home">
+                        Suite à une reconversion professionnelle en 2018, j'ai obtenu un titre professionnel de
+                        développeur logiciel. Je continue de me former en autodidacte et je suis attiré
+                        aussi bien par le front que le back. Je suis une personne motivée, rigoureuse et persévérante.
+                </span>
+            </div>
+        </section>
+        <section id="about">
+
+        </section>
+        <section id="skills">
+            <h1 id="skills-title">COMPETENCES</h1>
+            <div class="skills-container">
+                <div id="skills-languages">
+                    <div id="skills-value-left">
+                        <div class="contain">
+                            <div id="html" class="value">HTML5/CSS3</div>
+                        </div>
+                        <div class="contain">
+                            <div id="js" class="value">JAVASCRIPT/JQUERY</div>
+                        </div>
+                        <div class="contain">
+                            <div id="mysql" class="value">MySQL</div>
+                        </div>
+                        <div class="contain">
+                            <div id="php" class="value">PHP</div>
+                        </div>
+                    </div>
+                    <div id="skills-value-right">
+                        <div class="contain">
+                            <div class="value" id="java">JAVA</div>
+                        </div>
+                        <div class="contain">
+                            <div class="value" id="laravel">LARAVEL</div>
+                            </div>
+                        <div class="contain">
+                            <div class="value" id="vue">VUE.JS</div>
+                            </div>
+                        <div class="contain">
+                            <div class="value" id="wordpress">WORDPRESS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="experiences">
+            <h1>EXPERIENCES PROFESSIONNELLES</h1>
+            <div id="contain-badge">
+                <div class="badge" id="badge1">
+                    <div class="badge-heading">
+                        <h3>MCS DSO Effico</h3>
+                        <h4>Analyste Programmeur</h4>
+                        <p class="date">Mai 2019 - Juin 2019</p>
+                    </div >
+                    <div class="badge-description">
+                        <p>Contrôle de production</p>
+                        <p>Contôle sur l'intégration automatique de données clients</p>
+                        <p>Intégration/Suppression/Modification/Récupération de données en SQL depuis la base de donnée AS400</p>
+                    </div>
+                </div>
+                <div class="badge" id="badge2">
+                    <div class="badge-heading">
+                        <h3>YOUTRUST</h3>
+                        <h4>Développeur Web</h4>
+                        <p class="date">Juin 2018 - Octobre 2018</p>
+                    </div>
+                    <div  class="badge-description">
+                        <p>Stage de deux mois</p>
+                        <p>Mise en place d'une API Rest en Laravel5/MySql</p>
+                        <p>Refonte de l'interface utilisateur côté administrateur en Vue.js</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="formation">
+            <h1>FORMATION</h1>
+            <div id="container-formation">
+                <div id="container-formation-1" class="container-snd-formation">
+                    <div class="badge-formation">
+                        <div class="badge-formation-heading">
+                            <p>2019</p>
+                            <span></span>
+                            <h3>OpenClassRooms</h3>
+                            <h4>Certificats OpenClassRooms</h4>
+                        </div>
+                        <div class="badge-formation-description">
+                            <p>Java SE, Java EE</p>
+                            <p>Php procédural et objet</p>
+                        </div>
+                    </div>
+                    <div class="badge-formation">
+                        <div class="badge-formation-heading">
+                            <p>2018</p>
+                            <span></span>
+                            <h3>CEFIM - L'école du web et des réseaux</h3>
+                            <h4>Titre Professionnel Développeur Logiciel</h4>
+                        </div>
+                        <div class="badge-formation-description">
+                            <p>HTML, CSS, Javascipt, Php, MySql, Wordpress</p>
+                            <p>Java, Spring, Android</p>
+                            <p>Gestion de projet, AGILE</p>
+                        </div>
+                    </div>
+                    <div class="badge-formation">
+                        <div class="badge-formation-heading">
+                            <p>2018</p>
+                            <span></span>
+                            <h3>OpenClassRooms</h3>
+                            <h4>Certificats OpenClassRooms</h4>
+                        </div>
+                        <div class="badge-formation-description">
+                            <p>Web, HTML, CSS, Javascript</p>
+                        </div>
+                    </div>
+                </div> 
+                <div id="container-formation-2" class="container-snd-formation">
+                    <div class="badge-formation">
+                        <div class="badge-formation-heading">
+                            <p>2016</p>
+                            <span></span>
+                            <h3>STUDIO M</h3>
+                            <h4>BTS AUDIOVISUEL</h4>
+                        </div>
+                        <div class="badge-formation-description">
+                            <p></p>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="badge-formation">
+                        <div class="badge-formation-heading">
+                            <p>2012</p>
+                            <span></span>
+                            <h3>UFR SCIENCES ET TECHNIQUES</h3>
+                            <h4>LICENCE DE BIOLOGIE</h4>
+                        </div>
+                        <div class="badge-formation-description">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="badge-formation">
+                        <div class="badge-formation-heading">
+                            <p>2007</p>
+                            <span></span>
+                            <h3>LYCEE PHILIBERT DESSAIGNES</h3>
+                            <h4>BAC S</h4>
+                        </div>
+                        <div class="badge-formation-description">
+                            <p>Web, HTML, CSS, Javascript</p>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </section>
+        <section id="portfolio">
+            <h1>PORTFOLIO</h1>
+            <div id="container-portfolio">
+                <div class="container">
+                    <a href="https://github.com/kevinpemonon/javascript_pig_game" target="_blank" class="badge-project-link">
+                        <div class="badge-project">
+                            <img src="image/pig_game.PNG">
+                            <h3>Pig Game</h3>
+                            <p>HTML CSS JAVASCRIPT</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="container">
+                    <a href="https://github.com/kevinpemonon/php_chat" target="_blank" class="badge-project-link"> 
+                        <div class="badge-project">
+                            <img src="image/mini_chat.PNG">
+                            <h3>Mini-Chat</h3>
+                            <p>HTML CSS JAVASCRIPT MYSQL PHP</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="container">
+                    <a href="https://github.com/kevinpemonon/php_chat" target="_blank" class="badge-project-link"> 
+                        <div class="badge-project">
+                            <img src="image/mini_rpg.PNG">
+                            <h3>Mini-RPG</h3>
+                            <p>HTML CSS JAVASCRIPT MYSQL PHP</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="container">
+                    <a href="https://github.com/kevinpemonon/site_vitrine" target="_blank" class="badge-project-link"> 
+                        <div class="badge-project">
+                            <img src="image/travel-agency.PNG">
+                            <h3>Site vitrine</h3>
+                            <p>HTML CSS JAVASCRIPT</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="button-switch">
+                <span class="button button-left"><</span>
+                <span class="button button-right">></span>
+            </div>
+        </section>
+        <!-- <section id="contact">
+            <h1>CONTACT</h1>
+            <div id="form-center">   
+                <div id="contact-form">
+                    <form action="" method="post">
+                        <label for="firstname">Nom</label>
+                        <input type="text" id="firstname" name="firstname" placeholder="Votre nom">
+    
+                        <label for="lastname">Prénom</label>
+                        <input type="text" name="lastname" placeholder="Votre prénom">
+                        
+                        <label for="mail">Email</label>
+                        <input type="text" name="mail" placeholder="Votre email">
+    
+                        <label for="message">Message</label>
+                        <textarea placeholder="Votre message"></textarea>
+                        <div id="submit-center">
+                            <input type="submit" value="Valider">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section> -->
+    </main>
+    <footer>
+        <nav class="menu-footer">
+            <ul>
+                <li><a href="#about" class="about-menu">MOI</a></li>
+                <li><a href="#skills" class="skills-menu">COMPETENCES</a></li>
+                <li><a href="#experiences" class="experiences-menu">EXPERIENCES</a></li>
+                <li><a href="#formation" class="formation-menu">FORMATIONS</a></li>
+                <li><a href="#portfolio" class="portfolio-menu">PORTFOLIO</a></li>
+                <li><a href="#contact" class="contact-menu">CONTACT</a></li>
+            </ul>
+        </nav>
+        <nav class="menu-icon">
+            <ul>
+                <li><a href="#" class="facebook"><img src="image/facebook.png"></a></li>
+                <li><a href="#" class="github"><img src="image/github.png"></a></li>
+                <li><a href="#" class="linkedin"><img src="image/linkedin.png"></a></li>
+                <li><a href="#" class="mail"><img src=""></a></li>
+            </ul>
+            <p class="copyright-flaticon">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"         title="Flaticon">www.flaticon.com</a></p>
+        </nav>
+    </footer>
+
+
+    <script src="script.js" type="text/javascript"></script>
+</body>
+</html>
+
