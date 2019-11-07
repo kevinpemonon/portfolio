@@ -16,15 +16,15 @@
 <body>
     <header id="header">
         <div class="hamburger">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
+            <span class="hamburger-line bar1"></span>
+            <span class="hamburger-line bar2"></span>
+            <span class="hamburger-line bar3"></span>
         </div>
-        <nav id="menu-hide" class="menu-hide">
+        <nav id="menu-hide" class="menu menu-hide">
             <div>
                 <img class="logo-header" src="image/logo.png">
             </div>
-            <ul>
+            <ul class="nav-menu-main">
                 <li><a href="#header" class="home-menu">HOME</a></li>
                 <li><a href="#skills" class="skills-menu">COMPETENCES</a></li>
                 <li><a href="#experiences" class="experiences-menu">EXPERIENCES</a></li>
@@ -32,12 +32,17 @@
                 <li><a href="#portfolio" class="portfolio-menu">PORTFOLIO</a></li>
                 <!-- <li><a href="#contact" class="contact-menu">CONTACT</a></li> -->
             </ul>
+            <ul class="menu-social menu-social-header">
+                <li><a href="https://github.com/kevinpemonon" target="_blank" class="github"><img src="image/github.png"></a></li>
+                <li><a href="https://www.linkedin.com/in/kevin-pemonon/" target="_blank" class="linkedin"><img src="image/linkedin.png"></a></li>
+                <li><a href="mailto:kevinpemonon@gmail.com" class="mail"><img src="image/mail.png"></a></li>
+            </ul>
         </nav>
-        <nav id="menu-main">
+        <nav class="menu" id="menu-main">
             <div>
                 <img class="logo-header" src="image/logo.png">
             </div>
-            <ul>
+            <ul class="nav-menu-main">
                 <li><a href="#header" class="home-menu">HOME</a></li>
                 <li><a href="#skills" class="skills-menu">COMPETENCES</a></li>
                 <li><a href="#experiences" class="experiences-menu">EXPERIENCES</a></li>
@@ -45,12 +50,17 @@
                 <li><a href="#portfolio" class="portfolio-menu">PORTFOLIO</a></li>
                 <!-- <li><a href="#contact" class="contact-menu">CONTACT</a></li> -->
             </ul>
+            <ul class="menu-social menu-social-header">
+                <li><a href="https://github.com/kevinpemonon" target="_blank" class="github"><img src="image/github.png"></a></li>
+                <li><a href="https://www.linkedin.com/in/kevin-pemonon/" target="_blank" class="linkedin"><img src="image/linkedin.png"></a></li>
+                <li><a href="mailto:kevinpemonon@gmail.com" class="mail"><img src="image/mail.png"></a></li>
+            </ul>
         </nav>
     </header>
     <main>
         <section id="home">
             <div class="title-home">
-                <img src="image/logo.png" class="logo-home">
+                <span class="logo-home"></span>
                 <a class="button-cv" href="docs/cv_kevin_pemonon_alternance.pdf" target="_blank">TELECHARGER CV</a>
             </div>
             <div class="description-home">
@@ -145,7 +155,7 @@
                             <p>Php procédural et objet</p>
                         </div>
                     </div>
-                    <div class="badge-formation">
+                    <div class="badge-formation" id="badge-formation-cefim">
                         <div class="badge-formation-heading">
                             <p>2018</p>
                             <span></span>
@@ -179,8 +189,7 @@
                             <h4>BTS AUDIOVISUEL</h4>
                         </div>
                         <div class="badge-formation-description">
-                            <p></p>
-                            <p></p>
+                            <p>Option Gestion de Production</p>
                         </div>
                     </div>
                     <div class="badge-formation">
@@ -191,7 +200,7 @@
                             <h4>LICENCE DE BIOLOGIE</h4>
                         </div>
                         <div class="badge-formation-description">
-                            <p></p>
+                            <p>Option Ecologie/Ethologie</p>
                         </div>
                     </div>
                     <div class="badge-formation">
@@ -202,7 +211,7 @@
                             <h4>BAC S</h4>
                         </div>
                         <div class="badge-formation-description">
-                            <p>Web, HTML, CSS, Javascript</p>
+                            <p>Spécialisation Physique/Chimie</p>
                         </div>
                     </div>
                 </div> 
@@ -211,7 +220,7 @@
         <section id="portfolio">
             <h1>PORTFOLIO</h1>
             <div id="container-portfolio">
-                <div class="container">
+                <div class="container" id="container-1">
                     <a href="https://github.com/kevinpemonon/javascript_pig_game" target="_blank" class="badge-project-link">
                         <div class="badge-project">
                             <img src="image/pig_game.PNG">
@@ -220,7 +229,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="container">
+                <div class="container" id="container-2">
                     <a href="https://github.com/kevinpemonon/php_chat" target="_blank" class="badge-project-link"> 
                         <div class="badge-project">
                             <img src="image/mini_chat.PNG">
@@ -229,7 +238,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="container">
+                <div class="container" id="container-3">
                     <a href="https://github.com/kevinpemonon/php_chat" target="_blank" class="badge-project-link"> 
                         <div class="badge-project">
                             <img src="image/mini_rpg.PNG">
@@ -238,7 +247,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="container">
+                <div class="container" id="container-4">
                     <a href="https://github.com/kevinpemonon/site_vitrine" target="_blank" class="badge-project-link"> 
                         <div class="badge-project">
                             <img src="image/travel-agency.PNG">
@@ -288,14 +297,12 @@
                 <li><a href="#contact" class="contact-menu">CONTACT</a></li>
             </ul>
         </nav>
-        <nav class="menu-icon">
+        <nav class="menu-social menu-social-footer">
             <ul>
-                <li><a href="#" class="facebook"><img src="image/facebook.png"></a></li>
-                <li><a href="#" class="github"><img src="image/github.png"></a></li>
-                <li><a href="#" class="linkedin"><img src="image/linkedin.png"></a></li>
-                <li><a href="#" class="mail"><img src=""></a></li>
+                <li><a href="https://github.com/kevinpemonon" target="_blank" class="github"><img src="image/github.png"></a></li>
+                <li><a href="https://www.linkedin.com/in/kevin-pemonon/" target="_blank" class="linkedin"><img src="image/linkedin.png"></a></li>
+                <li><a href="mailto:kevinpemonon@gmail.com" class="mail"><img src="image/mail.png"></a></li>
             </ul>
-            <p class="copyright-flaticon">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"         title="Flaticon">www.flaticon.com</a></p>
         </nav>
     </footer>
 

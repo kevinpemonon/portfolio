@@ -48,11 +48,17 @@ body {
     width: 100%;
 }
 
-header nav {
+.menu {
     background-color: #1e4264;
 }
 
+#menu-main{
+    display: flex;
+    justify-content: space-between;
+}
+
 .logo-header{
+    flex:1;
     width: 100px;
     height: 100px;
     border: 3px solid white;
@@ -65,52 +71,80 @@ header nav {
     border-color: #f2b602;
 }
 
-header nav ul {
-    width: 800px;
-    display: flex;
-    justify-content: space-around;
-    padding-top: 40px;
-    padding-right: 50px;
-    padding-bottom: 10px;
+.nav-menu-main{
+    flex:4;
 }
 
-header nav ul li {
+.menu ul {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu ul li {
     list-style: none;
 }
 
-header nav ul li a {
+.nav-menu-main li{
+    margin-right: 40px;
+}
+
+.menu ul li a {
     text-decoration: none;
     color: white;
     font-size: 16px;
 }
 
-#menu-main{
-    display: flex;
-    justify-content: space-between;
-}
-
-header nav ul li a:hover {
+.nav-menu-main a:hover {
     border-bottom: 3px solid #f2b602;
     color: #f2b602;
     padding-bottom: 10px;
 }
 
+.menu-social-header{
+    flex:1;
+    padding-left: 0;
+}
+
+.menu-social-header li {
+    padding: 10px 10px 10px 10px;
+    margin-right: 10px;
+}
+
+.menu-social-header li:hover {
+    border-radius: 50px;
+    background-color: rgba(6, 46, 83);
+    padding: 10px;
+}
+
+.menu-social-header li a img {
+    width: 25px;
+    height: 25px;
+}
+
 @media all and (max-width: 1400px) {
 
-    header nav ul {
-        font-size: 12px;
-        width: 600px;
-    }
 }
 
 @media all and (max-width: 1120px) {
 
-    #menu-hide ul li a {
+    .logo-header{
+        flex:1;
+        width: 80px;
+        height: 80px;
+        border: 3px solid white;
+        border-radius: 100px;
+        margin: 10px 0 10px 50px;
+    }
+
+    .menu ul li a {
         font-size: 12px;
     }
 
-    #menu-main ul li a {
-        font-size: 12px;
+    .menu-social-header li a img {
+        width: 15px;
+        height: 15px;
     }
 }
 
@@ -129,45 +163,59 @@ header nav ul li a:hover {
         margin-bottom: 5px;
         background-color: #444;
         display: block;
+        transition: all 500ms;
     }
+    
 
     #menu-hide{
         top: -400px;
         height: 250px;
+        display: flex;
+        flex-direction: column;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-bottom: 4px solid white;
     }
 
-    header nav ul {
+    .menu ul {
         width: 100%;
-        display: block;
-    }
-
-    #menu-hide ul {
-        height: 250px;
-        margin-top: 50px;
+        padding: 0px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: unset;
+        justify-content: center;
+        margin-top: 70px;
     }
 
+/*     .nav-menu-main {
+        width: 100%;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    } */
+
     #menu-hide ul li {
-        margin-bottom: 10px;
+        margin: 0 0 10px 0;
     }
 
     #menu-hide ul li a {
-        padding: 5px 450px;
+        font-size: 14px;
+        padding-bottom: 0px;
     }
 
-    #menu-hide ul li a:hover {
-        background-color: white;
-        color:#444;
-        padding: 5px 450px;
+    .nav-menu-main li a:hover {
+        border-left: 2px solid white;
+        border-bottom: none;
+        padding-left: 5px;
     }
 
-    #menu-hide ul li a:active {
-        background-color: white;
-        color:#444;
-        padding: 5px 450px;
+    .menu-social-header{
+        height: 0;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
     }
 
     #menu-main {
@@ -178,6 +226,8 @@ header nav ul li a:hover {
        display: none;
     }
 }
+
+
 
 
 /*  HOME------------------------------------------------------------------------------------------------------------------------------*/
@@ -216,6 +266,9 @@ header nav ul li a:hover {
     height: 300px;
     border: 4px white solid;
     border-radius: 200px;
+    background-image: url('image/logo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .logo-home:hover{
@@ -245,24 +298,27 @@ header nav ul li a:hover {
 }
 
 .profil-picture{
+    border-radius: 20px;
     height: 500px;
     margin-top: 5px;
-    -webkit-filter: grayscale(1);
-    transition: margin-bottom 1s;
+    -webkit-filter: sepia(1);
+    transition: margin-bottom 1s, -webkit-filter 1s;
 }
 
 .profil-picture:hover{
     margin-bottom: 140px;
-    -webkit-filter: grayscale(0);
+    -webkit-filter: sepia(0);
 }
 
 .profil-picture:hover + .text-description-home{
-    top: 540px;
+    top: 550px;
     opacity: 1;
 }
 
 .text-description-home{
     position: absolute;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     top: 720px;
     background-color: rgba(6, 46, 83);
     width: 301px;
@@ -272,7 +328,7 @@ header nav ul li a:hover {
     padding: 20px;
 }
 
-@media all and (max-width: 1140px) {
+@media all and (max-width: 1120px) {
     
     .profil-picture{
         height: 400px;
@@ -336,7 +392,6 @@ header nav ul li a:hover {
         display: none;
         height: 400px;
         margin-top: 100px;
-        -webkit-filter: grayscale(0);
     }
     
     .profil-picture:hover{
@@ -346,6 +401,37 @@ header nav ul li a:hover {
     
     .text-description-home{
         display: none;
+    }
+}
+
+@media all and (max-width: 450px) {
+
+    #home{
+        height: auto;
+    }
+
+    .title-home{
+        margin-top: 50px;
+        margin-bottom: 0px;
+    }
+
+    .logo-home{
+        width: 200px; 
+        height: 200px;
+        border: 4px white solid;
+        border-radius: 200px;
+    }
+
+    .logo-home:hover{
+        background-image: url('image/profil.jpg');
+        background-size: 200px 200px;
+    }
+
+    .button-cv{
+        border: 4px solid white;
+        font-size: 16px;
+        padding: 15px;
+        transition: all 500ms;
     }
 }
 
@@ -477,6 +563,11 @@ header nav ul li a:hover {
 
 @media all and (max-width: 760px) {
 
+    #skills h1 {
+        width: 100%;
+        font-size: 20px;
+    }
+
     .contain{
         width: 300px;
     }
@@ -550,9 +641,9 @@ header nav ul li a:hover {
 #badge1:hover{
     background-image: url('image/dso.png');
     background-repeat: no-repeat;
-    background-size: 250px 250px;
-    background-position-x: 100px;
-    background-position-y: 40px;
+    background-size: 150px 150px;
+    background-position-x: 140px;
+    background-position-y: 100px;
 }
 
 #badge1:hover .badge-heading{
@@ -572,9 +663,9 @@ header nav ul li a:hover {
 #badge2:hover{
     background-image: url('image/youtrust.png');
     background-repeat: no-repeat;
-    background-size: 400px 133px;
-    background-position-x: 20px;
-    background-position-y: 90px;
+    background-size: 300px 100px;
+    background-position-x: 70px;
+    background-position-y: 120px;
 }
 
 #badge2:hover .badge-heading{
@@ -604,8 +695,13 @@ header nav ul li a:hover {
 }
 
 @media all and (max-width: 560px) {
+    #experiences h1 {
+        width: 100%;
+        font-size: 20px;
+    }
+
     .badge{
-        width: 300px;
+        width: 280px;
         height: 250px;
         border: 1px solid #444;
         background-color: white;
@@ -623,6 +719,10 @@ header nav ul li a:hover {
     
     #badge1:hover .badge-description{
         opacity: 1;
+    }
+
+    #badge2{
+        margin-left: -1400px;
     }
     
     #badge2:hover{
@@ -642,11 +742,11 @@ header nav ul li a:hover {
         display: block;
         content:"";
         background-image: url('image/dso.png');
-        background-size: 100px 100px;
-        width: 100px;
-        height: 100px;
+        background-size: 70px 70px;
+        width: 70px;
+        height: 70px;
         position: relative;
-        top: -200px;
+        top: -230px;
         left: 200px;
     }
 
@@ -654,13 +754,13 @@ header nav ul li a:hover {
         display: block;
         content:"";
         background-image: url('image/youtrust.png');
-        background-size: 100px 37px;
+        background-size: 70px 25px;
         background-repeat: no-repeat;
-        width: 150px;
-        height: 37px;
+        width: 70px;
+        height: 25px;
         position: relative;
         top: -200px;
-        left: 180px;
+        left: 200px;
     }
 
     .badge p {
@@ -676,6 +776,7 @@ header nav ul li a:hover {
     display: flex;
     flex-direction: column;
     margin-bottom: 50px;
+    padding-top: 60px;
     align-items: center;
 }
 
@@ -773,37 +874,52 @@ header nav ul li a:hover {
 }
 
 @media all and (max-width: 860px) {
+
+    #formation h1 {
+        width: 100%;
+        font-size: 20px;
+    }
+
     #formation {
         height: 1800px;
         margin-bottom: 50px;
     }
 
     #container-formation {
-        height: 900px;
+        width: 100%;
+        height: 1800px;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .container-snd-formation {
+        width: 100%;
         margin-bottom: 0px;
-        height: 800px;
+        height: 1000px;
     }
 
     #container-formation-1 {
+        height: 900px;
         margin-top: 0px;  
         opacity: 0;
         transition: all 1s;
     }
     
     #container-formation-2 {
+        height: 900px;
         margin-top: 0px;
         opacity: 0;
         transition: all 1s;
     }
 
     .badge-formation{
+        width: 250px;
         height: 220px;
+    }
+
+    #badge-formation-cefim{
+        height: 300px;
     }
 }
 
@@ -821,7 +937,7 @@ header nav ul li a:hover {
 }
 
 #portfolio h1 {
-    width: 500px;
+    width: 400px;
     color: #f2b602;
     border-top: 4px solid #f2b602;
     padding: 20px 0 0 0;
@@ -855,13 +971,17 @@ header nav ul li a:hover {
     color: white;
 }
 
-.badge-project h3{
-
+.badge-project:hover {
+    padding: 20px 0;
+    background-color: rgba(6, 46, 83, 0.2);
+    border: 5px solid #f2b602;
+    text-align: center;
 }
 
-.badge-project:hover h3, .badge-project:hover p{
-    color: white;
+.badge-project:hover h3{
+    color: #f2b602;
 }
+
 
 .badge-project img {
     border: 4px solid white;
@@ -913,15 +1033,13 @@ header nav ul li a:hover {
 
 @media all and (max-width: 840px) {
 
+    #portfolio{
+        margin-top: 200px;
+    }
+
     #container-portfolio{
         margin-left: 280px;
         width: 1000px;
-    }
-
-    .container-snd{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
     .badge-project{
@@ -936,10 +1054,47 @@ header nav ul li a:hover {
 }
 
 @media all and (max-width: 720px) {
+    #portfolio{
+        margin-top: 200px;
+    }
+
+    #portfolio h1 {
+        width: 100%;
+        font-size: 20px;
+    }
+
     #container-portfolio{
-        margin-left: 700px;
-        width: 1000px;
-        transition: margin-left 500ms;
+        margin-left: 0px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: none;
+    }
+
+    .badge-project{
+        width: 270px;
+        margin-bottom: 20px;
+    }
+
+    .container{
+        margin-right: 0px;
+    }
+
+    #container-1{
+        display: inherit;
+    }
+
+    #container-2{
+        display: none;
+    }
+
+    #container-3{
+        display: none;
+    }
+
+    #container-4{
+        display: none;
     }
 }
 
@@ -1023,7 +1178,7 @@ header nav ul li a:hover {
 
 footer {
     height: 100px;
-    background-color: #222;
+    background-color: #333;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1040,10 +1195,6 @@ footer nav ul li a {
     text-decoration: none;
 }
 
-footer nav ul li a img {
-    width: 25px;
-    height: 25px;
-}
 
 .menu-footer{
     flex: 3;
@@ -1059,46 +1210,38 @@ footer nav ul li a img {
     font-size: 12px;
     padding: 10px;
     border-radius: 10px;
-    transition: background-color 500ms;
+    transition: background-color 250ms;
 }
 
 .menu-footer ul li a:hover {
-    color: rgba(6, 46, 83);
-    background-color: white;
+    background-color: rgba(6, 46, 83);
     border-radius: 10px;
     padding: 10px;
 }
 
-.menu-icon{
+.menu-social-footer{
     flex: 2;
     margin-top: 10px;
 }
 
-.menu-icon ul {
+.menu-social-footer ul {
     justify-content: center;
 }
 
-.menu-icon ul li {
+.menu-social-footer ul li {
     margin-right: 10px;
     padding: 10px;
 }
 
-.menu-icon ul li:hover {
+.menu-social-footer li:hover {
     border-radius: 50px;
-    background-color: white;
+    background-color: rgba(6, 46, 83);
     padding: 10px;
 }
 
-.copyright-flaticon {
-    text-align: center;
-    color: white;
-    font-size: 10px;
-    padding-left: 30px;
-}
-
-.copyright-flaticon a {
-    text-decoration: none;
-    color: white;
+.menu-social-footer img {
+    width: 25px;
+    height: 25px;
 }
 
 @media all and (max-width: 820px) {
@@ -1107,13 +1250,8 @@ footer nav ul li a img {
         display: none;
     }
 
-    .menu-icon ul {
+    .menu-social-footer ul {
         padding-left: 0px;
         margin-left: 0px;
-    }
-
-    .copyright-flaticon {
-        padding-left: 0px;
-        padding-right: 10px;
     }
 }

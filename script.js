@@ -11,17 +11,33 @@ var wordpress = $('#wordpress');
 
 $(window).scroll(
     function progressBarSkills() {
-        if ($(window).scrollTop() + windowHeight  > positionSkills + 300) {
+        if (window.innerWidth >= 840 + "px") {
 
-            html.addClass('html');
-            js.addClass('js');
-            mysql.addClass('mysql');
-            php.addClass('php');
-            java.addClass('java');
-            laravel.addClass('laravel');
-            vue.addClass('vue');
-            wordpress.addClass('wordpress');
-        } 
+            if ($(window).scrollTop() + windowHeight  > positionSkills + 300) {
+                
+                html.addClass('html');
+                js.addClass('js');
+                mysql.addClass('mysql');
+                php.addClass('php');
+                java.addClass('java');
+                laravel.addClass('laravel');
+                vue.addClass('vue');
+                wordpress.addClass('wordpress');
+            }
+            return 
+        } else {
+            if ($(window).scrollTop() > 400) {
+                
+                html.addClass('html');
+                js.addClass('js');
+                mysql.addClass('mysql');
+                php.addClass('php');
+                java.addClass('java');
+                laravel.addClass('laravel');
+                vue.addClass('vue');
+                wordpress.addClass('wordpress');
+            }
+        }
     }
 );
 
@@ -59,16 +75,29 @@ const heigthExp2 = exp2.offset().top;
 
 $(window).scroll(
     function experienceDisplay() {
-        if ($(window).scrollTop() > 1200){
-            exp1[0].style.marginLeft = "0px";
-            exp1[0].style.opacity = "1";
-        }
+        if (window.innerWidth >= 840) {
+            if ($(window).scrollTop() > 1200){
+                exp1[0].style.marginLeft = "0px";
+                exp1[0].style.opacity = "1";
+            }
+            
+            if ($(window).scrollTop() > 1600){
+                exp2[0].style.marginLeft = "0px";
+                exp2[0].style.opacity = "1";
+            }
+        } else {
+            if ($(window).scrollTop() > 900){
+                exp1[0].style.marginLeft = "0px";
+                exp1[0].style.opacity = "1";
+            }
 
-        if ($(window).scrollTop() > 1600){
-            exp2[0].style.marginLeft = "0px";
-            exp2[0].style.opacity = "1";
+            if ($(window).scrollTop() > 1300){
+                exp2[0].style.marginLeft = "0px";
+                exp2[0].style.opacity = "1";
+            }
         }
-    });
+    }
+);
 
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------------------------------*/
@@ -100,8 +129,13 @@ $(window).scroll(
 
 const buttonRight = $('.button-right');
 const buttonLeft = $('.button-left');
-const containersPortfolio = $('#container-portfolio')[0];
+const containerPortfolio = $('#container-portfolio')[0];
+const containersPortfolio = $('#container-portfolio')[0].children;
 const container = $('.container')[0];
+const container1 = $('#container-1')[0];
+const container2 = $('#container-2')[0];
+const container3 = $('#container-3')[0];
+const container4 = $('#container-4')[0];
 let tracker;
 
 buttonRight.click(
@@ -111,25 +145,28 @@ buttonRight.click(
 
             tracker=0;
             
-            if(containersPortfolio.style.marginLeft == "" || containersPortfolio.style.marginLeft == 3190 + "px" && tracker == 0){
+            if(containerPortfolio.style.marginLeft == "" || containerPortfolio.style.marginLeft == 3190 + "px" && tracker == 0){
                 tracker=1;
-                containersPortfolio.style.marginLeft = 1370 + "px";
+                containerPortfolio.style.marginLeft = 1370 + "px";
             }
 
-            if(containersPortfolio.style.marginLeft == 1370 + "px" && tracker == 0){
+            if(containerPortfolio.style.marginLeft == 1370 + "px" && tracker == 0){
                 tracker=1;
-                containersPortfolio.style.marginLeft = -450 + "px";
+                containerPortfolio.style.marginLeft = -450 + "px";
             }
             
-            if(containersPortfolio.style.marginLeft == -450 + "px" && tracker == 0){
+            if(containerPortfolio.style.marginLeft == -450 + "px" && tracker == 0){
                 tracker=1;
-                containersPortfolio.style.marginLeft = -2270 + "px";
+                containerPortfolio.style.marginLeft = -2270 + "px";
             }
 
-        } if (window.innerWidth < 840 && window.innerWidth >= 750 ) {
-                containersPortfolio.style.marginLeft = -1360 + "px";
+            return;
+
+        } if (window.innerWidth < 840 && window.innerWidth >= 720 ) {
+                containerPortfolio.style.marginLeft = -1360 + "px";
+                return;
         } else {
-            tracker=0;
+            /* tracker=0;
             if(containersPortfolio.style.marginLeft == "" || containersPortfolio.style.marginLeft == 700 + "px" && tracker == 0){
                 tracker=1;
                 containersPortfolio.style.marginLeft = -130 + "px";
@@ -143,28 +180,26 @@ buttonRight.click(
             if(containersPortfolio.style.marginLeft == -950 + "px" && tracker == 0){
                 tracker=1;
                 containersPortfolio.style.marginLeft = -1750 + "px";
+            } */
+            let i = 0;
+            tracker = 0;
+            
+            for (i=0; i < containersPortfolio.length; i++){
+                if ((containersPortfolio[i].style.display == "" || containersPortfolio[i].style.display == "inherit") && tracker == 0){
+                    if((i+1) < containersPortfolio.length){
+                        tracker = 1;
+                        containersPortfolio[i].style.display = "none";
+                        containersPortfolio[i+1].style.display = "inherit";
+                    } else {
+                        tracker = 1;
+                        containersPortfolio[i].style.display = "none";
+                        containersPortfolio[0].style.display = "inherit";
+                    }
+                }
             }
         }
     }
 ); 
-
-
-    /* 
-    let i = 0;
-    
-     for (i=0; i < containersPortfolio.length; i++){
-        if ((containersPortfolio[i].style.display == "" || containersPortfolio[i].style.display == "inherit") && tracker == 0){
-            if((i+1) < containersPortfolio.length){
-                tracker = 1;
-                containersPortfolio[i].style.display = "none";
-                containersPortfolio[i+1].style.display = "inherit";
-            } else {
-                tracker = 1;
-                containersPortfolio[i].style.display = "none";
-                containersPortfolio[0].style.display = "inherit";
-            }
-        }
-    } */
 
 buttonLeft.click(
     function(){
@@ -173,24 +208,26 @@ buttonLeft.click(
         
             tracker=0;
 
-            if(containersPortfolio.style.marginLeft == -2270 + "px" && tracker == 0){
+            if(containerPortfolio.style.marginLeft == -2270 + "px" && tracker == 0){
                 tracker=1;
-                containersPortfolio.style.marginLeft = -450 + "px";
+                containerPortfolio.style.marginLeft = -450 + "px";
             }
 
-            if(containersPortfolio.style.marginLeft == -450 + "px" && tracker == 0){
+            if(containerPortfolio.style.marginLeft == -450 + "px" && tracker == 0){
                 tracker=1;
-                containersPortfolio.style.marginLeft = 1370 + "px";
+                containerPortfolio.style.marginLeft = 1370 + "px";
             }
 
-            if(containersPortfolio.style.marginLeft == 1370 + "px" && tracker == 0){
+            if(containerPortfolio.style.marginLeft == 1370 + "px" && tracker == 0){
                 tracker=1;
-                containersPortfolio.style.marginLeft = 3190 + "px";
+                containerPortfolio.style.marginLeft = 3190 + "px";
             }
-        } if (window.innerWidth < 840 && window.innerWidth >= 750 ) {
-            containersPortfolio.style.marginLeft = 280 + "px";
+            return;
+        } if (window.innerWidth < 840 && window.innerWidth >= 720 ) {
+            containerPortfolio.style.marginLeft = 280 + "px";
+            return;
         } else {
-            tracker=0;
+            /* tracker=0;
 
             if(containersPortfolio.style.marginLeft == -130 + "px" && tracker == 0){
                 tracker=1;
@@ -205,7 +242,33 @@ buttonLeft.click(
             if(containersPortfolio.style.marginLeft == -1750 + "px" && tracker == 0){
                 tracker=1;
                 containersPortfolio.style.marginLeft = -950 + "px";
+            } */
+
+            tracker = 0;
+
+            if ((container1.style.display == "" || container1.style.display == "inherit") && tracker == 0){
+                tracker = 1;
+                container1.style.display = "none";
+                container4.style.display = "inherit";
             }
+            
+            if (container2.style.display == "inherit" && tracker == 0){
+                tracker = 1;
+                container2.style.display = "none";
+                container1.style.display = "inherit";
+            }
+            
+             if (container3.style.display == "inherit" && tracker == 0){
+                tracker = 1;
+                container3.style.display = "none";
+                container2.style.display = "inherit";
+            }
+            if (container4.style.display == "inherit" && tracker == 0){
+                tracker = 1;
+                container4.style.display = "none";
+                container3.style.display = "inherit";
+            }
+        
         }
 });
     
@@ -225,7 +288,7 @@ buttonLeft.click(
         }
     } */
     
-/*     if ((container1.style.display == "" || container1.style.display == "inherit") && tracker == 0){
+    if ((container1.style.display == "" || container1.style.display == "inherit") && tracker == 0){
         tracker = 1;
         container1.style.display = "none";
         container4.style.display = "inherit";
@@ -247,7 +310,7 @@ buttonLeft.click(
         container4.style.display = "none";
         container3.style.display = "inherit";
     }
- */
+
 
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------------------------------*/
@@ -259,10 +322,16 @@ const hamburgerLines = $('.hamburger-line');
 const topMenu = menuHide[0];
 
 hamburger.click(function() {
-    if (menuHide[0].style.top == "" || menuHide[0].style.top == -400 + "px"){
-        menuHide[0].style.top = 0 + "px";
+    if (topMenu.style.top == "" || topMenu.style.top == -400 + "px"){
+        topMenu.style.top = 0 + "px";
+        for (i=0; i<hamburgerLines.length; i++){
+            hamburgerLines[i].style.backgroundColor = "white";
+        }
     } else {
-        menuHide[0].style.top = -400 + "px";
+        topMenu.style.top = -400 + "px";
+        for (i=0; i<hamburgerLines.length; i++){
+            hamburgerLines[i].style.backgroundColor = "#444444";
+        }
     }
 });
 
